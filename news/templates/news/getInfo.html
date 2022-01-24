@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>GetInfo</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+<style>
+	
+</style>
+<body>
+	{% for inf in info_list %}
+	<div class="image">
+		 <img  src="{{ inf.imageURL }}" alt="Mike">
+	</div>
+	
+	<h4 class="lorem">{{ inf.info }}</h4>
+	<a href="{% url 'info' %}" type="button" class="btn">Orqaga</a>
+	{% endfor %}
+</body>
+</html>

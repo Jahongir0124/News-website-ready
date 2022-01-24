@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+        <nav class="navbar1">
+          <div class="info">
+              <h2>NEWS.UZ</h2></div>
+              <i class="fa fa-bars" id="menu"></i>
+              <i class="fa fa-close" id="close"></i>
+          <div class="list"> 
+                 <a href="{% url 'info' %}">Yangiliklar</a>
+                <a href="{% url 'get_tag' %}">Mashhur teglar</a>
+                <a href="{% url 'about' %}">Biz haqimizda</a>
+              </div>                  
+                
+      </nav>
+    <div class="row">
+      {% for cat in tag_info %}
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ cat.category_name }}</h5>
+              <p class="card-text">{{ cat.category_name }}da yuz berayotgan eng so'nggi xabarlar.</p>
+              <a href="{% url 'category' cat.id %}" class="btn btn-danger">Barchasi...</a>
+            </div>
+          </div>
+      
+  </div>
+  {% endfor %}
+</div>
+<footer>
+  <span>© 2021 | Created & Designed By Jakhongir</span>
+ 
+</footer>
+
+ <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

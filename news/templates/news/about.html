@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style/style1.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+      <nav class="navbar1">
+        <div class="info">
+            <h2>NEWS.UZ</h2></div>
+            <i class="fa fa-bars" id="menu"></i>
+            <i class="fa fa-close" id="close"></i>
+        <div class="list"> 
+               <a href="{% url 'info' %}">Yangiliklar</a>
+                <a href="{% url 'get_tag' %}">Mashhur teglar</a>
+                <a href="{% url 'about' %}">Biz haqimizda</a>
+            </div>                  
+              
+    </nav>
+	<div class="about-section">
+  <h1>Biz haqimizda</h1>
+  <p>Some text about who we are and what we do.</p>
+  <p>Resize the browser window to see that this page is responsive by the way.</p>
+</div>
+
+<h2 style="text-align:center">Bizning jamoamiz</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://image.freepik.com/free-vector/person-avatar-design_24877-38137.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Jane Doe</h2>
+        <p class="title">Admin</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://image.freepik.com/free-vector/person-avatar-design_24877-38137.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Mike Ross</h2>
+        <p class="title">Art Director</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>mike@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://image.freepik.com/free-vector/person-avatar-design_24877-38137.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>John Doe</h2>
+        <p class="title">Designer</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>john@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <span>© 2021 | Created & Designed By Jakhongir</span>
+ 
+</footer>
+ <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

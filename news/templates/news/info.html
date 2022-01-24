@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <nav class="navbar1">
+        <div class="info">
+            <h2>NEWS.UZ</h2></div>
+        <i class="fa fa-bars" id="menu"></i>
+        <i class="fa fa-close" id="close"></i>
+        <div class="list"> 
+                <a href="{% url 'info' %}">Yangiliklar</a>
+                <a href="{% url 'get_tag' %}">Mashhur teglar</a>
+                <a href="{% url 'about' %}">Biz haqimizda</a>
+            </div>                  
+               
+    </nav>
+    
+       <div class="card">
+        {% for info in info_list %}
+            <div id="gallery">
+                <a href="{% url 'info1' info.id %}">
+                <img src="{{ info.imageURL }}" width="200" height="150">
+                </a>
+                <div class="deck">
+                    <h4>{{ info.info_name}}</h4>
+            </div>
+            </div>
+            {% endfor %}
+           <!--  <div id="gallery">
+                <a href="#">
+                <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" width="600" height="100">
+                </a>
+                <div class="deck">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua..</h4>
+            </div>
+            </div>
+            <div id="gallery">
+                <a href="#">
+                <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" width="600" height="100">
+                </a>
+                <div class="deck">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua..</h4>
+            </div>
+            </div> -->
+       </div>
+       <footer>
+        <span>© 2021 | Created & Designed By Jakhongir</span>
+       
+      </footer>
+     <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
