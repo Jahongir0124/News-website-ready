@@ -52,3 +52,5 @@ def tag_info(request,tag_name,info_id):
 
 def about_page(request):
     return render(request,'news/about.html')
+def akk(request):
+    pass
